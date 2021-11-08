@@ -37,16 +37,22 @@ func removeFromArray1 (from: Int, to: Int) -> [Int] {
     var array = [Int]()
     for i in from...to {
         array.append(i)
-        array.removeAll(where: oddCheck)
-        array.removeAll(where: dividedByThree)
     }
+    array.removeAll(where: oddCheck)
+    array.removeAll(where: dividedByThree)
     return array
 }
+
+        
 var array1 = removeFromArray1(from: 0, to: 99)
+print("array1 = \(array1)")
 
 
+var exchangeFor5 = [1, 5, 3, 5, 5, 3, 6, 8, 3, 2, 5]
 
-
+if let i = exchangeFor5.firstIndex(of: 5) {
+    print(exchangeFor5[i])
+}
 
 //* Написать функцию, которая добавляет в массив новое число Фибоначчи, и добавить при помощи нее 50 элементов.
 //Числа Фибоначчи определяются соотношениями Fn=Fn-1 + Fn-2.
