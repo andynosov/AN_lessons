@@ -159,8 +159,6 @@ print(car3)
 enum AccountNumberErrors: Error{
     case tooShort
     case notANumbers
-    case clearField
-    
 }
 
 
@@ -174,24 +172,20 @@ class UserAccount {
     }
 
 func checkAccountNumber(enterNumber pass: String ) throws -> Bool {
-    guard pass.count > 0 else {
-        throw AccountNumberErrors.clearField
-    }
+
     guard pass.count >= 8 else {
         throw AccountNumberErrors.tooShort
     }
     guard Int(pass) != nil else {
         throw AccountNumberErrors.notANumbers
     }
-
-    
     return true
  }
 }
 
 
 
-var user2124124 = UserAccount(enterAccountNumber: "12345678")
+var user2124124 = UserAccount(enterAccountNumber: "123456f8")
 
 
 
@@ -200,8 +194,6 @@ do {
     print("ok, account number is checked")
 } catch AccountNumberErrors.notANumbers {
     print("Only numbers allowed")
-} catch AccountNumberErrors.clearField {
-    print("Clear Field")
 } catch AccountNumberErrors.tooShort {
     print("required account # lenght is 8")
 }
